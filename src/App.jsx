@@ -1,11 +1,21 @@
 import './App.css';
+import logo from './assets/icons/pngwing.com.png';
+import facebook from './assets/icons/icons8-facebook-новый-144.png';
+import instagram from './assets/icons/icons8-instagram-144.png';
+import youtube from './assets/icons/icons8-youtube-144.png';
+import linkedin from './assets/icons/icons8-линкедин-144.png';
+import heart from './assets/icons/icons8-червы-100.png';
+import star from './assets/icons/star.png';
+import video from './assets/videos/Титаник (1997) «Titanic» - Трейлер (Trailer) - Что посмотреть_ (1080p, h264).mp4';
+import header_banner from './assets/background.jpg';
+import img_film from './assets/ImageFilm.jpg';
 
 function App() {
    return (
       <>
          <header>
             <a className="header__logo-flex" href="./index.html">
-               <img src="./assets/icons/pngwing.com.png" alt="logo" />
+               <img src={logo} alt="logo" />
                <div className="header__logo-flex_sitename">
                   <p>REACT</p>
                   <p>CINEMA</p>
@@ -20,7 +30,7 @@ function App() {
             </ul>
             <div className="header__auth-flex">
                <div className="favorites__movies">
-                  <img src="./assets/icons/icons8-червы-100.png" alt="" />
+                  <img src={heart} alt="" />
                   <p>0</p>
                </div>
                <a href="./favorites.html">Account</a>
@@ -40,12 +50,9 @@ function App() {
                </div>
             </div>
             <video autoPlay muted loop>
-               <source
-                  src="./assets/videos/Титаник (1997) «Titanic» - Трейлер (Trailer) - Что посмотреть_ (1080p, h264).mp4"
-                  type="video/mp4"
-               />
+               <source src={video} type="video/mp4" />
             </video>
-            <img src="./assets/background.jpg" alt="" />
+            <img src={header_banner} alt="" />
          </div>
 
          <div className="container">
@@ -94,13 +101,13 @@ function App() {
             <div id="movies" className="movies anchor">
                <a className="movies__card" href="./movie.html">
                   <div className="movies__card-rating">
-                     <img src="./assets/icons/star.png" alt="" />
-                     <img src="./assets/icons/star.png" alt="" />
-                     <img src="./assets/icons/star.png" alt="" />
-                     <img src="./assets/icons/star.png" alt="" />
-                     <img src="./assets/icons/star.png" alt="" />
+                     <img src={star} alt="" />
+                     <img src={star} alt="" />
+                     <img src={star} alt="" />
+                     <img src={star} alt="" />
+                     <img src={star} alt="" />
                   </div>
-                  <img src="./assets/ImageFilm.jpg" alt="" />
+                  <img src={img_film} alt="" />
                </a>
             </div>
 
@@ -116,13 +123,10 @@ function App() {
                <div className="site__info">
                   <p>REACT CINEMA</p>
                   <div>
-                     <img
-                        src="./assets/icons/icons8-facebook-новый-144.png"
-                        alt=""
-                     />
-                     <img src="./assets/icons/icons8-instagram-144.png" alt="" />
-                     <img src="./assets/icons/icons8-youtube-144.png" alt="" />
-                     <img src="./assets/icons/icons8-линкедин-144.png" alt="" />
+                     <img src={facebook} alt="" />
+                     <img src={instagram} alt="" />
+                     <img src={youtube} alt="" />
+                     <img src={linkedin} alt="" />
                   </div>
                </div>
                <div className="footer__hrefs">
