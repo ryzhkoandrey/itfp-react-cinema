@@ -1,14 +1,16 @@
 import './App.css';
-import Header from './components/layout/Header';
-import Banner from './components/home/Banner';
-import Filter from './components/home/Filter';
-import MoviesList from './components/movies/MoviesList';
-import Footer from './components/layout/Footer';
+// import Header from './components/layout/Header';
+// import Banner from './components/home/Banner';
+// import Filter from './components/home/Filter';
+// import MoviesList from './components/movies/MoviesList';
+// import Footer from './components/layout/Footer';
+
+import Home from './pages/Home';
 
 function App() {
    return (
       <>
-         <Header />
+         {/* <Header />
          <Banner />
 
          <div className="container">
@@ -21,7 +23,9 @@ function App() {
             </div>
          </div>
 
-         <Footer />
+         <Footer /> */}
+
+         <Home />
       </>
    );
 }
