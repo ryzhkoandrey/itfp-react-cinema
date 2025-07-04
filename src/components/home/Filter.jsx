@@ -22,6 +22,7 @@ function Filter() {
             </div>
             <span></span>
          </div>
+
          <div className="filter__buttons">
             <button>Movies</button>
             <button>Cinema</button>
@@ -34,6 +35,7 @@ function Filter() {
             <button>Mysticism</button>
             <button>Drama</button>
          </div>
+
          <div className="filter__search">
             <input type="text" placeholder="Search..." />
             <button>
