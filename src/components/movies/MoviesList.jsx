@@ -5,14 +5,9 @@ function MoviesList() {
 
    return (
       <div id="movies" className="movies anchor">
-         <MoviesCard />
-         <MoviesCard />
-         <MoviesCard />
-         <MoviesCard />
-         <MoviesCard />
-         <MoviesCard />
-         <MoviesCard />
-         <MoviesCard />
+         {arrayFilms.map((_, index) => (
+            <MoviesCard key={index} />
+         ))}
       </div>
    );
 }
