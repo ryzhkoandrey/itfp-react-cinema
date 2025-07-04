@@ -14,7 +14,6 @@ function App() {
          <div className="container">
             <Filter />
             <MoviesList />
-
             <div className="movies__scroll">
                <button>
                   <i className="fa-solid fa-arrow-down"></i>
