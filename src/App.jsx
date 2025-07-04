@@ -1,41 +1,18 @@
 import './App.css';
-import logo from './assets/icons/pngwing.com.png';
 import facebook from './assets/icons/icons8-facebook-новый-144.png';
 import instagram from './assets/icons/icons8-instagram-144.png';
 import youtube from './assets/icons/icons8-youtube-144.png';
 import linkedin from './assets/icons/icons8-линкедин-144.png';
-import heart from './assets/icons/icons8-червы-100.png';
 import star from './assets/icons/star.png';
 import video from './assets/videos/Титаник (1997) «Titanic» - Трейлер (Trailer) - Что посмотреть_ (1080p, h264).mp4';
 import header_banner from './assets/background.jpg';
 import img_film from './assets/ImageFilm.jpg';
+import Header from './components/layout/Header';
 
 function App() {
    return (
       <>
-         <header>
-            <a className="header__logo-flex" href="./index.html">
-               <img src={logo} alt="logo" />
-               <div className="header__logo-flex_sitename">
-                  <p>REACT</p>
-                  <p>CINEMA</p>
-               </div>
-            </a>
-            <ul className="header__navbar-flex">
-               <a href="./index.html">Home</a>
-               <a href="./favorites.html">Favorites</a>
-               <a href="#categoryes">Movies</a>
-               <a href="#categoryes">FAQ</a>
-               <a href="#categoryes">Help</a>
-            </ul>
-            <div className="header__auth-flex">
-               <div className="favorites__movies">
-                  <img src={heart} alt="" />
-                  <p>0</p>
-               </div>
-               <a href="./favorites.html">Account</a>
-            </div>
-         </header>
+         <Header />
 
          <div className="header__banner">
             <div>
