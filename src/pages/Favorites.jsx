@@ -1,4 +1,4 @@
-import Filter from '../components/home/Filter';
+import Filter from '../components/Filter';
 
 function Favorites() {
    return (

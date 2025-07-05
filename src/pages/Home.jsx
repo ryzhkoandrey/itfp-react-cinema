@@ -1,5 +1,5 @@
 import Banner from '../components/home/Banner';
-import Filter from '../components/home/Filter';
+import Filter from '../components/Filter';
 import MoviesList from '../components/movies/MoviesList';
 
 function Home() {
