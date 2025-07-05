@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function Filter() {
-   const [activeCategory, setActiveCategory] = useState(0);
+   const [status, changeStatus] = useState('Popular');
    const filter_categroies = ['Popular', 'Novelty', 'Featured', 'Short films'];
 
    return (
@@ -11,9 +11,9 @@ function Filter() {
                {filter_categroies.map((category, index) => (
                   <div
                      key={index}
-                     onClick={() => setActiveCategory(index)}
+                     onClick={() => changeStatus(category)}
                      className={`filter__categoryes-item ${
-                        activeCategory === index ? 'active-category' : null
+                        category === status ? 'active-category' : null
                      }`}
                   >
                      <p>{category}</p>
