@@ -1,7 +1,7 @@
 import Filter from '../components/Filter';
 import background from '../assets/Blade Runner 2049(2).jpg';
-import star from '../assets/icons/star.png';
-import img_film from '../assets/ImageFilm.jpg';
+import imgFilm from '../assets/ImageFilm.jpg';
+import MoviesList from '../components/movies/MoviesList';
 
 function Favorites() {
    return (
@@ -20,7 +20,7 @@ function Favorites() {
 
                   <div className="top-movies__card">
                      <div className="top-movies__card-padding">
-                        <img src={img_film} alt="" />
+                        <img src={imgFilm} alt="" />
                         <div className="top-movies__card-info">
                            <div className="top-movies__card-info-title">
                               <p>Бегущий по лезвию 2049</p>
@@ -37,18 +37,7 @@ function Favorites() {
                   </div>
                </div>
 
-               <div className="movies">
-                  <a className="movies__card" href="/">
-                     <div className="movies__card-rating">
-                        <img src={star} alt="" />
-                        <img src={star} alt="" />
-                        <img src={star} alt="" />
-                        <img src={star} alt="" />
-                        <img src={star} alt="" />
-                     </div>
-                     <img src={img_film} alt="" />
-                  </a>
-               </div>
+               <MoviesList />
             </div>
 
             <div className="movies__scroll">
