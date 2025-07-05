@@ -1,11 +1,14 @@
 import Filter from '../components/Filter';
+import background from '../assets/Blade Runner 2049(2).jpg';
+import star from '../assets/icons/star.png';
+import img_film from '../assets/ImageFilm.jpg';
 
 function Favorites() {
    return (
       <>
          <div className="favorites__banner">
             <div className="gradient__overlay"></div>
-            <img src="./assets/Blade Runner 2049(2).jpg" alt="" />
+            <img src={background} alt="" />
          </div>
 
          <div className="container">
@@ -17,7 +20,7 @@ function Favorites() {
 
                   <div className="top-movies__card">
                      <div className="top-movies__card-padding">
-                        <img src="./assets/ImageFilm.jpg" alt="" />
+                        <img src={img_film} alt="" />
                         <div className="top-movies__card-info">
                            <div className="top-movies__card-info-title">
                               <p>Бегущий по лезвию 2049</p>
@@ -37,13 +40,13 @@ function Favorites() {
                <div className="movies">
                   <a className="movies__card" href="/">
                      <div className="movies__card-rating">
-                        <img src="./assets/icons/star.png" alt="" />
-                        <img src="./assets/icons/star.png" alt="" />
-                        <img src="./assets/icons/star.png" alt="" />
-                        <img src="./assets/icons/star.png" alt="" />
-                        <img src="./assets/icons/star.png" alt="" />
+                        <img src={star} alt="" />
+                        <img src={star} alt="" />
+                        <img src={star} alt="" />
+                        <img src={star} alt="" />
+                        <img src={star} alt="" />
                      </div>
-                     <img src="./assets/ImageFilm.jpg" alt="" />
+                     <img src={img_film} alt="" />
                   </a>
                </div>
             </div>
