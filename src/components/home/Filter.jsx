@@ -1,24 +1,25 @@
+import { useState } from 'react';
+
 function Filter() {
+   const [activeCategory, setActiveCategory] = useState(0);
+   const filter_categroies = ['Popular', 'Novelty', 'Featured', 'Short films'];
+
    return (
       <div className="filter">
          <div id="categoryes" className="filter__categoryes anchor">
             <div className="filter__categoryes-flex">
-               <div className="filter__categoryes-item active-category">
-                  <p>Popular</p>
-                  <span></span>
-               </div>
-               <div className="filter__categoryes-item">
-                  <p>Novelty</p>
-                  <span></span>
-               </div>
-               <div className="filter__categoryes-item">
-                  <p>Featured</p>
-                  <span></span>
-               </div>
-               <div className="filter__categoryes-item">
-                  <p>Short films</p>
-                  <span></span>
-               </div>
+               {filter_categroies.map((category, index) => (
+                  <div
+                     key={index}
+                     onClick={() => setActiveCategory(index)}
+                     className={`filter__categoryes-item ${
+                        activeCategory === index ? 'active-category' : null
+                     }`}
+                  >
+                     <p>{category}</p>
+                     <span></span>
+                  </div>
+               ))}
             </div>
             <span></span>
          </div>
