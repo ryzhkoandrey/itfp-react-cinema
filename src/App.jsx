@@ -20,14 +20,14 @@ function App() {
          })
          .then((response) => {
             console.log(response);
-            // changeValue(response);
+            changeValue(response);
          })
          .catch((error) => console.error(error));
    }, []);
 
    return (
       <>
-         <p>{value}</p>
+         <p style={{ color: '#fff' }}>{value[0]?.name}</p>
 
          <Header />
          <Banner />
