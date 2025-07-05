@@ -1,19 +1,17 @@
 import Banner from '../components/home/Banner';
 import Filter from '../components/Filter';
 import MoviesList from '../components/movies/MoviesList';
+import MoviesScroll from '../components/movies/MoviesScroll';
 
 function Home() {
    return (
       <>
          <Banner />
+
          <div className="container">
             <Filter />
             <MoviesList />
-            <div className="movies__scroll">
-               <button>
-                  <i className="fa-solid fa-arrow-down"></i>
-               </button>
-            </div>
+            <MoviesScroll />
          </div>
       </>
    );
