@@ -9,7 +9,7 @@ function App() {
       <>
          <Header />
          {/* <Home /> */}
-         <Favorites />
+         {/* <Favorites /> */}
          <Footer />
       </>
    );
