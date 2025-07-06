@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function FilterButtons() {
-   const [active, setActive] = useState('');
+   const [active, changeActive] = useState('Movies');
    const categories = [
       'Movies',
       'Cinema',
@@ -17,13 +17,13 @@ function FilterButtons() {
 
    return (
       <div className="filter__buttons">
-         {categories.map((category, index) => (
+         {categories.map((value, index) => (
             <button
-               onClick={() => setActive(category)}
-               className={category === active ? 'active' : null}
+               onClick={() => changeActive(value)}
+               className={value === active ? 'active' : null}
                key={index}
             >
-               {category}
+               {value}
             </button>
          ))}
       </div>
