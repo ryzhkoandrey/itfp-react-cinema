@@ -1,5 +1,5 @@
 import Video from '../components/movie/video';
-import MainInfo from '../components/movie/MainInfo';
+import MainInfo from '../components/movie/MainInfo/MainInfo';
 
 function Movie() {
    return (

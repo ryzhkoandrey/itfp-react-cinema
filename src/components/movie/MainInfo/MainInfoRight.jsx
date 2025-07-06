@@ -7,14 +7,17 @@ function MainInfoRight() {
                <p>Type:</p>
                <p>Movie</p>
             </div>
+
             <div>
                <p>Director:</p>
                <p>Movie</p>
             </div>
+
             <div>
                <p>Date aired:</p>
                <p>Movie</p>
             </div>
+
             <div>
                <p>Duration:</p>
                <p>Movie</p>

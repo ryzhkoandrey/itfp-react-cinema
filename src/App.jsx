@@ -10,8 +10,8 @@ function App() {
       <>
          <Header />
          {/* <Home /> */}
-         {/* <Favorites /> */}
-         <Movie />
+         <Favorites />
+         {/* <Movie /> */}
          <Footer />
       </>
    );

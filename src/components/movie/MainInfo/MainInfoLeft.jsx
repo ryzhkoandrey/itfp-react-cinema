@@ -1,24 +1,20 @@
-import star from '../../assets/icons/star.png';
+import Rating from '../Rating';
 
 function MainInfoLeft() {
    return (
       <div className="main__info-left">
          <div className="main__info-left-title">
             <p>Бегущий по лезвию 2049</p>
-            <div className="main__info-rating">
-               <img src={star} />
-               <img src={star} />
-               <img src={star} />
-               <img src={star} />
-               <img src={star} />
-            </div>
+            <Rating />
          </div>
+
          <div className="main__info-left-categoryes">
             <p>18+</p>
             <p>HD</p>
             <p>2022</p>
             <p>Movie</p>
          </div>
+
          <div className="main__info-left-about">
             <p>Description</p>
             <p>

@@ -1,5 +1,5 @@
 import Banner from '../components/favorites/Banner';
-import Filter from '../components/Filter';
+import Filter from '../components/filter/Filter';
 import FavoritesList from '../components/favorites/FavoritesList';
 import MoviesList from '../components/movies/MoviesList';
 import MoviesScroll from '../components/movies/MoviesScroll';
