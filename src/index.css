@@ -698,3 +698,12 @@ main > video {
    background-color: #222127;
    border-radius: 19px;
 }
+
+.not-found {
+   height: 500px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: 'Inter', sans-serif;
+   color: #fff;
+}

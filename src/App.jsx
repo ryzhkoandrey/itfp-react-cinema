@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import Movie from './pages/Movie';
+import NotFound from './pages/NotFound';
 import Footer from './components/layout/Footer';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                <Route path="/" element={<Home />} />
                <Route path="/favorites" element={<Favorites />} />
                <Route path="/movie" element={<Movie />} />
+               <Route path="*" element={<NotFound />} />
             </Routes>
 
             <Footer />
