@@ -8,8 +8,8 @@ function MoviesList() {
 
    return (
       <div id="movies" className="movies anchor">
-         {films.map((movie) => (
-            <MoviesCard key={movie.id} />
+         {films.map((value) => (
+            <MoviesCard key={value.id} {...value} />
          ))}
       </div>
    );
