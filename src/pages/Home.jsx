@@ -7,7 +7,6 @@ function Home() {
    return (
       <>
          <Banner />
-
          <div className="container">
             <Filter />
             <MoviesList />
