@@ -1,15 +1,12 @@
 import MoviesCard from './MoviesCard';
 
 function MoviesList() {
-   const arrayFilms = ['Kenguru', 'Dog', 'Joker', 'Betman', 'Superman'];
+   fetch('https://686fd2504838f58d1123034b.mockapi.io/movies')
+      .then((data) => data.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
 
-   return (
-      <div id="movies" className="movies anchor">
-         {arrayFilms.map((_, index) => (
-            <MoviesCard key={index} />
-         ))}
-      </div>
-   );
+   return <div id="movies" className="movies anchor"></div>;
 }
 
 export default MoviesList;
