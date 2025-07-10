@@ -1,12 +1,23 @@
+import { useEffect, useState } from 'react';
 import MoviesCard from './MoviesCard';
 
 function MoviesList() {
-   fetch('https://686fd2504838f58d1123034b.mockapi.io/movies')
-      .then((data) => data.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+   const [movies, setMovies] = useState([]);
 
-   return <div id="movies" className="movies anchor"></div>;
+   useEffect(() => {
+      fetch('https://686fd2504838f58d1123034b.mockapi.io/movies')
+         .then((data) => data.json())
+         .then((data) => setMovies(data))
+         .catch((error) => console.error(error));
+   }, []);
+
+   return (
+      <div id="movies" className="movies anchor">
+         {movies.map((movie) => (
+            <MoviesCard key={movie.id} />
+         ))}
+      </div>
+   );
 }
 
 export default MoviesList;
