@@ -4,7 +4,6 @@ import { Films } from '../../App';
 
 function MoviesList() {
    const films = useContext(Films);
-   console.log(films);
 
    return (
       <div id="movies" className="movies anchor">
