@@ -28,6 +28,17 @@ const moviesSlice = createSlice({
       builder.addCase(fetchMovies.pending, (state) => {
          state.status = 'loading';
       });
+
+      builder.addCase(fetchMovies.fulfilled, (state, action) => {
+         console.log(action.payload);
+         state.films = action.payload;
+         state.status = 'fulfilled';
+      });
+
+      builder.addCase(fetchMovies.rejected, (state, action) => {
+         state.status = 'error';
+         console.error(action.error.message);
+      });
    },
 });
 
