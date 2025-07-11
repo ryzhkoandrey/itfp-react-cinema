@@ -10,16 +10,6 @@ import Movie from './pages/Movie';
 import Home from './pages/Home';
 
 function App() {
-   // useEffect(() => {
-   //    async function fetchItems() {
-   //       await fetch('https://686fd2504838f58d1123034b.mockapi.io/movies')
-   //          .then((data) => data.json())
-   //          .then((data) => changeValue(data))
-   //          .catch((error) => console.error(error));
-   //    }
-   //    fetchItems();
-   // }, []);
-
    return (
       <>
          <BrowserRouter>

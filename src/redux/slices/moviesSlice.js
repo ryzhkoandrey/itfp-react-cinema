@@ -37,6 +37,7 @@ const moviesSlice = createSlice({
 
       builder.addCase(fetchMovies.rejected, (state, action) => {
          state.status = 'error';
+         state.errors = action.error.message;
          console.error(action.error.message);
       });
    },
