@@ -9,9 +9,7 @@ const counterSlice = createSlice({
    initialState,
    reducers: {
       changeValue: (state) => {
-         console.log(state.value);
-         state.value = 10;
-         console.log(state.value);
+         state.value += 5;
       },
    },
 });
