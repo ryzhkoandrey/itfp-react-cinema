@@ -1,12 +1,17 @@
 import { createContext, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import store from './redux/store';
+import './App.css';
+
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Home from './pages/Home';
+
 import Favorites from './pages/Favorites';
-import Movie from './pages/Movie';
 import NotFound from './pages/NotFound';
-import './App.css';
+import Movie from './pages/Movie';
+import Home from './pages/Home';
 
 export const Films = createContext();
 
@@ -27,14 +32,14 @@ function App() {
       <>
          <BrowserRouter>
             <Header />
-            <Films.Provider value={value}>
+            <Provider store={store}>
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/favorites" element={<Favorites />} />
                   <Route path="/movie" element={<Movie />} />
                   <Route path="*" element={<NotFound />} />
                </Routes>
-            </Films.Provider>
+            </Provider>
             <Footer />
          </BrowserRouter>
       </>
