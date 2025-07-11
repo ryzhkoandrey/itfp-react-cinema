@@ -13,8 +13,6 @@ import NotFound from './pages/NotFound';
 import Movie from './pages/Movie';
 import Home from './pages/Home';
 
-export const Films = createContext();
-
 function App() {
    const [value, changeValue] = useState([]);
 
