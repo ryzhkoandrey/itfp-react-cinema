@@ -9,7 +9,7 @@ const initialState = {
 export const fetchMovies = createAsyncThunk('movie/fetchmovies', async () => {
    try {
       const movies = await fetch(
-         'https://686fd2504838f58d1123034b.mockapi.io/movies'
+         'https://686fd2504838f58d1123034b.mockapi.io/movie'
       );
       if (!movies.ok) throw new Error('Error on server, sorry');
       return movies.json();
@@ -30,7 +30,6 @@ const moviesSlice = createSlice({
       });
 
       builder.addCase(fetchMovies.fulfilled, (state, action) => {
-         console.log(action.payload);
          state.films = action.payload;
          state.status = 'fulfilled';
       });
