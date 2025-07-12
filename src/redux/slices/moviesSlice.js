@@ -9,7 +9,7 @@ const initialState = {
 export const fetchMovies = createAsyncThunk('movie/fetchmovies', async () => {
    try {
       const movies = await fetch(
-         'https://686fd2504838f58d1123034b.mockapi.io/movie'
+         'https://686fd2504838f58d1123034b.mockapi.io/movies'
       );
       if (!movies.ok) throw new Error('Error on server, sorry');
       return movies.json();
