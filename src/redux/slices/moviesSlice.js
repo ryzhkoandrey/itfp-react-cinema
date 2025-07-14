@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -6,17 +7,25 @@ const initialState = {
    errors: null,
 };
 
-export const fetchMovies = createAsyncThunk('movie/fetchmovies', async () => {
-   try {
-      const movies = await fetch(
-         'https://686fd2504838f58d1123034b.mockapi.io/movies'
-      );
-      if (!movies.ok) throw new Error('Error on server, sorry');
-      return movies.json();
-   } catch (error) {
-      console.error(error);
-      throw error;
-   }
+export const fetchMovies = createAsyncThunk('movie/fetchmovies', () => {
+   return axios
+      .get('https://686fd2504838f58d1123034b.mockapi.io/movies')
+      .then((response) => response.data)
+      .catch((error) => {
+         console.error(error);
+         throw error;
+      });
+
+   // try {
+   //    const movies = await fetch(
+   //       'https://686fd2504838f58d1123034b.mockapi.io/movies'
+   //    );
+   //    if (!movies.ok) throw new Error('Error on server, sorry');
+   //    return movies.json();
+   // } catch (error) {
+   //    console.error(error);
+   //    throw error;
+   // }
 });
 
 const moviesSlice = createSlice({
@@ -35,7 +44,7 @@ const moviesSlice = createSlice({
       });
 
       builder.addCase(fetchMovies.rejected, (state, action) => {
-         state.status = 'error';
+         state.status = 'loading';
          state.errors = action.error.message;
          console.error(action.error.message);
       });
