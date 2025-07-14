@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies } from '../../redux/slices/moviesSlice';
 import MoviesCard from './MoviesCard';
+import SkeletonFilm from '../skeletons/SkeletonFilm';
 
 function MoviesList() {
    const dispatch = useDispatch();
@@ -14,7 +15,8 @@ function MoviesList() {
    return (
       <div id="movies" className="movies anchor">
          {films.map((value) => (
-            <MoviesCard key={value.id} {...value} />
+            // <MoviesCard key={value.id} {...value} />
+            <SkeletonFilm key={value.id} />
          ))}
       </div>
    );

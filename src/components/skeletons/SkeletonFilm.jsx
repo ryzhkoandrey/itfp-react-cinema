@@ -6,8 +6,8 @@ const SkeletonFilm = (props) => (
       width={130}
       height={200}
       viewBox="0 0 130 200"
-      backgroundColor="#363636"
-      foregroundColor="#4f4f4f"
+      backgroundColor="#171717ff"
+      foregroundColor="#212121ff"
       {...props}
    >
       <rect x="0" y="0" rx="10" ry="10" width="130" height="200" />
