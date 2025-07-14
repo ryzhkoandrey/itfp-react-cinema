@@ -6,7 +6,7 @@ import SkeletonFilm from '../skeletons/SkeletonFilm';
 
 function MoviesList() {
    const dispatch = useDispatch();
-   const { films } = useSelector((store) => store.movies);
+   const { films, status } = useSelector((store) => store.movies);
 
    useEffect(() => {
       dispatch(fetchMovies());
@@ -14,10 +14,9 @@ function MoviesList() {
 
    return (
       <div id="movies" className="movies anchor">
-         {films.map((value) => (
-            // <MoviesCard key={value.id} {...value} />
-            <SkeletonFilm key={value.id} />
-         ))}
+         {status === 'loading'
+            ? [...new Array(12)].map((_, index) => <SkeletonFilm key={index} />)
+            : films.map((value) => <MoviesCard key={value.id} {...value} />)}
       </div>
    );
 }
