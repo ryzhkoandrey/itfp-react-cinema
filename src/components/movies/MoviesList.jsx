@@ -15,7 +15,7 @@ function MoviesList() {
    return (
       <div id="movies" className="movies anchor">
          {status === 'loading'
-            ? [...new Array(12)].map((_, index) => <SkeletonFilm key={index} />)
+            ? [...new Array(19)].map((_, index) => <SkeletonFilm key={index} />)
             : films.map((value) => <MoviesCard key={value.id} {...value} />)}
       </div>
    );
