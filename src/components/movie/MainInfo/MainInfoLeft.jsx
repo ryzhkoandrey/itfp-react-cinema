@@ -6,19 +6,19 @@ function MainInfoLeft(props) {
    return (
       <div className="main__info-left">
          <div className="main__info-left-title">
-            <p>{dataFilm?.title}</p>
+            <p>{dataFilm.title}</p>
             <Rating />
          </div>
 
          <div className="main__info-left-categoryes">
-            {dataFilm?.categoryes.map((value, index) => (
+            {dataFilm.categoryes.map((value, index) => (
                <p key={index}>{value}</p>
             ))}
          </div>
 
          <div className="main__info-left-about">
             <p>Description</p>
-            <p>{dataFilm?.description}</p>
+            <p>{dataFilm.description}</p>
          </div>
       </div>
    );

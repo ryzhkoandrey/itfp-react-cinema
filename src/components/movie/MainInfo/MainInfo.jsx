@@ -17,8 +17,14 @@ function MainInfo() {
 
    return (
       <div className="main__info">
-         <MainInfoLeft filmInfo={{ ...searchFilm }} />
-         <MainInfoRight />
+         {searchFilm.status === 'loading' ? (
+            <p>Loading...</p>
+         ) : (
+            <>
+               <MainInfoLeft filmInfo={{ ...searchFilm }} />
+               <MainInfoRight />
+            </>
+         )}
       </div>
    );
 }
