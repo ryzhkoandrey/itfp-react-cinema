@@ -22,7 +22,7 @@ function MainInfo() {
          ) : (
             <>
                <MainInfoLeft filmInfo={{ ...searchFilm }} />
-               <MainInfoRight />
+               <MainInfoRight filmInfo={{ ...searchFilm }} />
             </>
          )}
       </div>
