@@ -1,8 +1,10 @@
 import { useSelector } from 'react-redux';
+import searchParamInYoutube from '../../tools/searchParamInYoutube';
 
 function Video() {
    const { searchFilm } = useSelector((store) => store.movies);
-   const videoURL = searchFilm.film.trailerUrl;
+   const trailerurl = searchFilm.film.trailerUrl;
+   const videoURL = searchParamInYoutube(trailerurl);
 
    console.log(videoURL);
 
