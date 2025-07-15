@@ -13,12 +13,14 @@ function MainInfoLeft() {
    }, [dispatch]);
 
    const { searchFilm } = useSelector((store) => store.movies);
+
    console.log(searchFilm);
 
    return (
       <div className="main__info-left">
          <div className="main__info-left-title">
-            <p>Бегущий по лезвию 2049</p>
+            <p>{searchFilm.film.title}</p>
+            {/* <p>Бегущий по лезвию 2049</p> */}
             <Rating />
          </div>
 
