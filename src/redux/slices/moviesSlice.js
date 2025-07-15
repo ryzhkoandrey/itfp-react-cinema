@@ -3,8 +3,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
    films: [],
-   status: null,
+   status: 'loading',
    errors: null,
+   searchFilm: {
+      film: null,
+      status: 'loading',
+      error: null,
+   },
 };
 
 export const fetchMovies = createAsyncThunk('movie/fetchmovies', () => {
@@ -20,8 +25,14 @@ export const fetchMovies = createAsyncThunk('movie/fetchmovies', () => {
 const moviesSlice = createSlice({
    name: 'movie',
    initialState,
-   reducers: {},
-
+   reducers: {
+      searchFilmInState: (state, action) => {
+         const { id } = action.payload;
+         const searchFilm = state.films.find((film) => film.id === id);
+         state.searchFilm.film = searchFilm;
+         state.searchFilm.status = 'fulfilled';
+      },
+   },
    extraReducers: (builder) => {
       builder.addCase(fetchMovies.pending, (state) => {
          state.status = 'loading';
@@ -41,3 +52,4 @@ const moviesSlice = createSlice({
 });
 
 export default moviesSlice.reducer;
+export const { searchFilmInState } = moviesSlice.actions;

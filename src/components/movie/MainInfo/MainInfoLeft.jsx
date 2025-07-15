@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 import Rating from '../Rating';
-import { useSelector } from 'react-redux';
 
 function MainInfoLeft() {
    const a = useParams();
+   console.log(a);
 
    return (
       <div className="main__info-left">
