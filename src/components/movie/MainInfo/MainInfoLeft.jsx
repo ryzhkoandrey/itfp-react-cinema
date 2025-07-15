@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchFilmInState } from '../../../redux/slices/moviesSlice';
 import Rating from '../Rating';
 
 function MainInfoLeft() {
-   const a = useParams();
-   console.log(a);
+   const id = useParams();
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+      dispatch(searchFilmInState(id));
+   }, [dispatch]);
+
+   const { searchFilm } = useSelector((store) => store.movies);
+   console.log(searchFilm);
 
    return (
       <div className="main__info-left">
