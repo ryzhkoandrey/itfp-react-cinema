@@ -15,17 +15,6 @@ export const fetchMovies = createAsyncThunk('movie/fetchmovies', () => {
          console.error(error);
          throw error;
       });
-
-   // try {
-   //    const movies = await fetch(
-   //       'https://686fd2504838f58d1123034b.mockapi.io/movies'
-   //    );
-   //    if (!movies.ok) throw new Error('Error on server, sorry');
-   //    return movies.json();
-   // } catch (error) {
-   //    console.error(error);
-   //    throw error;
-   // }
 });
 
 const moviesSlice = createSlice({
