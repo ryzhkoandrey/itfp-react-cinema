@@ -3,8 +3,8 @@ import searchParamInYoutube from '../../tools/searchParamInYoutube';
 
 function Video() {
    const { searchFilm } = useSelector((store) => store.movies);
-   const trailerurl = searchFilm.film.trailerUrl;
-   const videoURL = searchParamInYoutube(trailerurl);
+   // const trailerurl = searchFilm.film.trailerUrl;
+   // const videoURL = searchParamInYoutube(trailerurl);
 
    return (
       <>
@@ -17,6 +17,7 @@ function Video() {
                   height="700"
                   src={`https://www.youtube.com/embed/${videoURL}`}
                   title="YouTube video player"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                ></iframe>

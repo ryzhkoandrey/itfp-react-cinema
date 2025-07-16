@@ -8,12 +8,13 @@ import MainInfoRight from './MainInfoRight';
 function MainInfo() {
    const id = useParams();
    const dispatch = useDispatch();
+   const { searchFilm, status } = useSelector((store) => store.movies);
 
    useEffect(() => {
-      dispatch(searchFilmInState(id));
-   }, [dispatch]);
-
-   const { searchFilm } = useSelector((store) => store.movies);
+      if (status === 'fulfilled') {
+         dispatch(searchFilmInState(id));
+      }
+   }, [dispatch, status]);
 
    return (
       <div className="main__info">
