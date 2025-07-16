@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 import searchParamInYoutube from '../../tools/searchParamInYoutube';
+import SkeletonVideo from '../skeletons/SkeletonVideo';
 
 function Video() {
    const { searchFilm, status } = useSelector((store) => store.movies);
 
    if (status === 'loading') {
-      return <p>Loading...</p>;
+      return <SkeletonVideo />;
    }
 
    const trailerurl = searchFilm.film?.trailerUrl;
@@ -14,7 +15,7 @@ function Video() {
    return (
       <div className="video-wrapper">
          <iframe
-            width="100%"
+            width="1200"
             height="700"
             src={`https://www.youtube.com/embed/${videoURL}`}
             title="YouTube video player"
