@@ -6,7 +6,11 @@ function Video() {
    const { searchFilm, status } = useSelector((store) => store.movies);
 
    if (status === 'loading') {
-      return <SkeletonVideo />;
+      return (
+         <div className="video-wrapper">
+            <SkeletonVideo />
+         </div>
+      );
    }
 
    const trailerurl = searchFilm.film?.trailerUrl;
