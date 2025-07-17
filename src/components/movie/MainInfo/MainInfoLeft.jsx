@@ -5,6 +5,11 @@ function MainInfoLeft(props) {
 
    return (
       <div className="main__info-left">
+         <div className="main__info-left-btns">
+            <button className="main__info-left-favorite">Favorite</button>
+            <button className="main__info-left-favorite">Remove Favorite</button>
+         </div>
+
          <div className="main__info-left-title">
             <p>{dataFilm.title}</p>
             <Rating />
