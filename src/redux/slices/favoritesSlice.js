@@ -1,7 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+function loadFavoritesMovies() {
+   const dataLocal = localStorage.getItem('favoritesMovies');
+   const parseData = dataLocal ? JSON.parse(dataLocal) : [];
+   return parseData;
+}
+
 const initialState = {
-   favoritesMovies: [],
+   favoritesMovies: loadFavoritesMovies(),
    status: 'loading',
 };
 
