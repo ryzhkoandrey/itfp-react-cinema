@@ -15,7 +15,7 @@ const favoritesSlice = createSlice({
    name: 'favorites',
    initialState,
    reducers: {
-      addFavoritesMove: (state, action) => {
+      addFavoritesMovie: (state, action) => {
          const dataFilm = action.payload;
          const isAlreadyFavorite = state.favoritesMovies.some(
             (movie) => movie.id === dataFilm.id
@@ -28,6 +28,8 @@ const favoritesSlice = createSlice({
             );
          }
       },
+
+      removeFavoritesMovie: (state, action) => {},
    },
 });
 
