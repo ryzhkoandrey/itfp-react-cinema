@@ -31,10 +31,9 @@ const favoritesSlice = createSlice({
 
       removeFavoritesMovie: (state, action) => {
          const dataFilm = action.payload;
-         const updatedArray = state.favoritesMovies.filter(
-            (film) => film.id !== dataFilm.id
+         state.favoritesMovies = state.favoritesMovies.filter(
+            (movie) => movie.id !== dataFilm.id
          );
-         state.favoritesMovies = updatedArray;
          localStorage.setItem(
             'favoritesMovies',
             JSON.stringify(state.favoritesMovies)
