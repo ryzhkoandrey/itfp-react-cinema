@@ -282,6 +282,13 @@ ul {
    gap: 25px;
    justify-content: space-between;
 }
+
+.movies__text {
+   color: #fff;
+   font-family: 'Inter', sans-serif;
+   font-size: 24px;
+}
+
 .movies__card {
    display: block;
    width: 130px;

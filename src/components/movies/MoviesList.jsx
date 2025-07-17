@@ -10,13 +10,19 @@ function MoviesList() {
 
    return (
       <div id="movies" className="movies anchor">
-         {path.pathname === '/favorites'
-            ? favoritesMovies.map((value) => (
-                 <MoviesCard key={value.id} {...value} />
-              ))
-            : status === 'loading'
-            ? [...new Array(19)].map((_, index) => <SkeletonFilm key={index} />)
-            : films.map((value) => <MoviesCard key={value.id} {...value} />)}
+         {path.pathname === '/favorites' ? (
+            favoritesMovies.length > 0 ? (
+               favoritesMovies.map((value) => (
+                  <MoviesCard key={value.id} {...value} />
+               ))
+            ) : (
+               <p className="movies__text">У вас нет избранных фильмов</p>
+            )
+         ) : status === 'loading' ? (
+            [...new Array(19)].map((_, index) => <SkeletonFilm key={index} />)
+         ) : (
+            films.map((value) => <MoviesCard key={value.id} {...value} />)
+         )}
       </div>
    );
 }
