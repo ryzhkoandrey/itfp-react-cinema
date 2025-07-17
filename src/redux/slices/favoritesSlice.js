@@ -17,9 +17,16 @@ const favoritesSlice = createSlice({
    reducers: {
       addFavoritesMove: (state, action) => {
          const dataFilm = action.payload;
-         const stringifyDataFilm = JSON.stringify(dataFilm);
-         localStorage.setItem('favoritesMovies', stringifyDataFilm);
-         state.favoritesMovies.push(dataFilm);
+         const isAlreadyFavorite = state.favoritesMovies.some(
+            (movie) => movie.id === dataFilm.id
+         );
+         if (!isAlreadyFavorite) {
+            state.favoritesMovies.push(dataFilm);
+            localStorage.setItem(
+               'favoritesMovies',
+               JSON.stringify(state.favoritesMovies)
+            );
+         }
       },
    },
 });
