@@ -36,6 +36,9 @@ const moviesSlice = createSlice({
 
       filterMovies: (state, action) => {
          const searchTerm = action.payload.toLowerCase();
+         state.filteredMovies = state.films.filter((movie) =>
+            movie.title.toLowerCase().includes(searchTerm)
+         );
       },
    },
 
@@ -58,4 +61,4 @@ const moviesSlice = createSlice({
 });
 
 export default moviesSlice.reducer;
-export const { searchFilmInState } = moviesSlice.actions;
+export const { searchFilmInState, filterMovies } = moviesSlice.actions;
