@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import MoviesCard from './MoviesCard';
-import SkeletonFilm from '../skeletons/SkeletonFilm';
+import FavoriteMoviesList from './FavoriteMoviesList';
+import LoadingMovies from './LoadingMovies';
 
 function MoviesList() {
    const path = useLocation();
@@ -11,17 +11,9 @@ function MoviesList() {
    return (
       <div id="movies" className="movies anchor">
          {path.pathname === '/favorites' ? (
-            favoritesMovies.length > 0 ? (
-               favoritesMovies.map((value) => (
-                  <MoviesCard key={value.id} {...value} />
-               ))
-            ) : (
-               <p className="movies__text">У вас нет избранных фильмов</p>
-            )
-         ) : status === 'loading' ? (
-            [...new Array(19)].map((_, index) => <SkeletonFilm key={index} />)
+            <FavoriteMoviesList favorites={favoritesMovies} />
          ) : (
-            films.map((value) => <MoviesCard key={value.id} {...value} />)
+            <LoadingMovies films={films} status={status} />
          )}
       </div>
    );
