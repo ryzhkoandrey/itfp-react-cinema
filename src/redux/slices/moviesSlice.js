@@ -50,7 +50,9 @@ const moviesSlice = createSlice({
 
       builder.addCase(fetchMovies.fulfilled, (state, action) => {
          state.films = action.payload;
-         state.filmsCategory = action.payload.flatMap((value) => value.category);
+         state.filmsCategory = [
+            ...new Set(action.payload.flatMap((value) => value.category)),
+         ];
          state.status = 'fulfilled';
       });
 
