@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
    films: [],
+   filmsCategory: ['Action'],
    status: 'loading',
    errors: null,
    searchFilm: {
@@ -49,6 +50,7 @@ const moviesSlice = createSlice({
 
       builder.addCase(fetchMovies.fulfilled, (state, action) => {
          state.films = action.payload;
+         state.filmsCategory = action.payload.flatMap((value) => value.category);
          state.status = 'fulfilled';
       });
 
