@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import FavoriteMoviesList from './FavoriteMoviesList';
 import LoadingMovies from './LoadingMovies';
+import MoviesCards from './MoviesCards';
 
 function MoviesList() {
    const path = useLocation();
@@ -12,8 +13,10 @@ function MoviesList() {
       <div id="movies" className="movies anchor">
          {path.pathname === '/favorites' ? (
             <FavoriteMoviesList favorites={favoritesMovies} />
+         ) : status === 'loading' ? (
+            <LoadingMovies />
          ) : (
-            <LoadingMovies films={films} status={status} />
+            <MoviesCards films={films} />
          )}
       </div>
    );
