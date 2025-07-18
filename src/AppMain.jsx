@@ -8,6 +8,7 @@ import Movie from './pages/Movie';
 import Favorites from './pages/Favorites';
 import NotFound from './pages/NotFound';
 
+import ScrollToTop from './components/layout/ScrollToTop';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -23,6 +24,7 @@ function AppMain() {
    return (
       <>
          <BrowserRouter>
+            <ScrollToTop />
             <Header />
             <Routes>
                <Route path="/" element={<Home />} />

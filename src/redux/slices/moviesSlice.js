@@ -10,6 +10,7 @@ const initialState = {
       status: 'loading',
       error: null,
    },
+   filteredMovies: [],
 };
 
 export const fetchMovies = createAsyncThunk('movie/fetchmovies', () => {
@@ -32,7 +33,12 @@ const moviesSlice = createSlice({
          state.searchFilm.film = searchFilm;
          state.searchFilm.status = 'fulfilled';
       },
+
+      filterMovies: (state, action) => {
+         const searchTerm = action.payload.toLowerCase();
+      },
    },
+
    extraReducers: (builder) => {
       builder.addCase(fetchMovies.pending, (state) => {
          state.status = 'loading';
