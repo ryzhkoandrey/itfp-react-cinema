@@ -38,11 +38,14 @@ const moviesSlice = createSlice({
       },
 
       filterMovies: (state, action) => {
-         const searchTerm = action.payload.toLowerCase();
-
-         state.filteredMovies = state.films.filter((movie) =>
-            movie.title.toLowerCase().includes(searchTerm)
-         );
+         if (action.payload === '') {
+            state.filteredMovies = [];
+         } else {
+            const searchTerm = action.payload.toLowerCase();
+            state.filteredMovies = state.films.filter((movie) =>
+               movie.title.toLowerCase().includes(searchTerm)
+            );
+         }
       },
 
       searchCategoriesFilms: (state, action) => {
