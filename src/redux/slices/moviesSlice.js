@@ -32,21 +32,26 @@ const moviesSlice = createSlice({
       searchFilmInState: (state, action) => {
          const { id } = action.payload;
          const searchFilm = state.films.find((film) => film.id === id);
+
          state.searchFilm.film = searchFilm;
          state.searchFilm.status = 'fulfilled';
       },
 
       filterMovies: (state, action) => {
          const searchTerm = action.payload.toLowerCase();
+
          state.filteredMovies = state.films.filter((movie) =>
             movie.title.toLowerCase().includes(searchTerm)
          );
       },
 
       searchCategoriesFilms: (state, action) => {
+         if (action.payload === 'All') state.filteredMoviesCategories = [];
+
          const searchFilms = state.films.filter((value) =>
             value.category.includes(action.payload)
          );
+
          state.filteredMoviesCategories = searchFilms;
       },
    },
