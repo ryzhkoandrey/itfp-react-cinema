@@ -44,10 +44,10 @@ const moviesSlice = createSlice({
       },
 
       searchCategoriesFilms: (state, action) => {
-         const searchFilms = state.films.filter((film) =>
-            film.category.includes(action.payload)
+         const searchFilms = state.films.filter((value) =>
+            value.category.includes(action.payload)
          );
-         state.filteredMoviesCategories = [...searchFilms];
+         state.filteredMoviesCategories = searchFilms;
       },
    },
 

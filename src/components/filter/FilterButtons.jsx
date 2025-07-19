@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { searchCategoriesFilms } from '../../redux/slices/moviesSlice';
 
 function FilterButtons() {
+   const dispatch = useDispatch();
    const { filmsCategory } = useSelector((store) => store.movies);
    const [active, changeActive] = useState('All');
-   const dispatch = useDispatch();
 
-   const handlerCategory = (value) => {
+   const categoryButtonLogic = (value) => {
       changeActive(value);
       dispatch(searchCategoriesFilms(value));
    };
@@ -15,14 +15,14 @@ function FilterButtons() {
    return (
       <div className="filter__buttons">
          <button
-            onClick={() => handlerCategory('All')}
+            onClick={() => categoryButtonLogic('All')}
             className={active === 'All' ? 'active' : null}
          >
             All
          </button>
          {filmsCategory.map((value, index) => (
             <button
-               onClick={() => handlerCategory(value)}
+               onClick={() => categoryButtonLogic(value)}
                className={value === active ? 'active' : null}
                key={index}
             >
