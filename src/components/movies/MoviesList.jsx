@@ -14,7 +14,13 @@ function MoviesList() {
    return (
       <div id="movies" className="movies anchor">
          {path.pathname === '/favorites' ? (
-            <FavoriteMoviesList favorites={favoritesMovies} />
+            <FavoriteMoviesList
+               favorites={{
+                  favoritesMovies,
+                  filteredMovies,
+                  filteredMoviesCategories,
+               }}
+            />
          ) : status === 'loading' ? (
             <LoadingMovies />
          ) : (
