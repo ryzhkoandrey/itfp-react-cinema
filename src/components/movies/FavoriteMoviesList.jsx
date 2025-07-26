@@ -15,13 +15,11 @@ function FavoriteMoviesList({ favorites }) {
             (searchTitle) => searchTitle.title === searchFilms.title
          );
       });
+   } else if (favorites.favoritesMovies.length === 0) {
+      return <p className="movies__text">У вас нет избранных фильмов</p>;
    } else {
       moviesToShow = favorites.favoritesMovies;
    }
-
-   // if (favorites.favoritesMovies.length === 0) {
-   //    return <p className="movies__text">У вас нет избранных фильмов</p>;
-   // }
 
    return moviesToShow.map((value) => <MoviesCard key={value.id} {...value} />);
 }
