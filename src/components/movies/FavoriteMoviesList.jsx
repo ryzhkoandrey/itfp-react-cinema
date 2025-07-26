@@ -1,13 +1,21 @@
 import MoviesCard from './MoviesCard';
 
 function FavoriteMoviesList({ favorites }) {
-   if (favorites.favoritesMovies.length === 0) {
-      return <p className="movies__text">У вас нет избранных фильмов</p>;
+   let moviesToShow = [];
+
+   if (favorites.filteredMovies.length > 0) {
+      moviesToShow = favorites.filteredMovies;
+   } else if (favorites.filteredMoviesCategories.length > 0) {
+      moviesToShow = favorites.filteredMoviesCategories;
+   } else {
+      moviesToShow = favorites.favoritesMovies;
    }
 
-   return favorites.favoritesMovies.map((value) => (
-      <MoviesCard key={value.id} {...value} />
-   ));
+   // if (favorites.favoritesMovies.length === 0) {
+   //    return <p className="movies__text">У вас нет избранных фильмов</p>;
+   // }
+
+   return moviesToShow.map((value) => <MoviesCard key={value.id} {...value} />);
 }
 
 export default FavoriteMoviesList;
