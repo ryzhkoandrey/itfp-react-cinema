@@ -4,9 +4,17 @@ function FavoriteMoviesList({ favorites }) {
    let moviesToShow = [];
 
    if (favorites.filteredMovies.length > 0) {
-      moviesToShow = favorites.filteredMovies;
+      moviesToShow = favorites.filteredMovies.filter((searchFilms) => {
+         return favorites.favoritesMovies.some(
+            (searchTitle) => searchTitle.title === searchFilms.title
+         );
+      });
    } else if (favorites.filteredMoviesCategories.length > 0) {
-      moviesToShow = favorites.filteredMoviesCategories;
+      moviesToShow = favorites.filteredMoviesCategories.filter((searchFilms) => {
+         return favorites.favoritesMovies.some(
+            (searchTitle) => searchTitle.title === searchFilms.title
+         );
+      });
    } else {
       moviesToShow = favorites.favoritesMovies;
    }
